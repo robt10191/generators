@@ -1,0 +1,14 @@
+{
+  "name": "generator-yoobic-component",
+  "version": "0.1.0",
+  "description": "a generator for yoobic component",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^1.1.1"
+  }
+}
