@@ -1,7 +1,7 @@
 {
-  "name": "generator-yoobic-component",
+  "name": "generator-component",
   "version": "0.1.0",
-  "description": "a generator for yoobic component",
+  "description": "a generator for components",
   "files": [
     "generators"
   ],
