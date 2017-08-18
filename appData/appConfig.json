@@ -1,0 +1,10 @@
+{
+    "appName": "newapp",
+    "pages": [{
+        "pageName": "login-page",
+        "platforms": ["base", "web", "mobile"],
+        "components": [{
+            "selector": "app-login"
+        }]
+    }]
+}

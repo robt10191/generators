@@ -1,0 +1,11 @@
+{
+    "components": {
+        "app-login": {
+            "module": "AppModule",
+            "modulePath": "@shared/app",
+            "defaultMethods": [
+                "onLoginSuccessfull"
+            ]
+        }
+    }
+}
