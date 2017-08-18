@@ -1,1 +1,0 @@
-import { AppModule } from '@shared/app/base';

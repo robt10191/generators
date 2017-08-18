@@ -4,19 +4,11 @@ module.exports = class extends Generator {
 
     constructor(args, opts) {
         super(args, opts);
-        this.argument('configFilePath', {
-            type: String,
-            required: true
-        });
-        this.argument('yoobicDependencyDefinitionsPath', {
-            type: String,
-            required: true
-        });
     }
 
     initializing() {
-        this._appConfig = this.fs.readJSON(this.options['configFilePath']);
-        this._yoobicDependencyDefinitions = this.fs.readJSON(this.options['yoobicDependencyDefinitionsPath']);
+        this._appConfig = this.fs.readJSON(this.templatePath('../../../../appData/appConfig.json'));
+        this._yoobicDependencyDefinitions = this.fs.readJSON(this.templatePath('../../../../appData/yoobicDependencies.json'));
     }
 
     writing() {
