@@ -30,15 +30,25 @@ module.exports = class extends Generator {
             this.fs.write(pagePath + pageView, '');
             this.fs.write(pagePath + pageStyle, '');
 
-            this.fs.copyTpl(this.templatePath( platformName + 'Component.ts'),
+            let _defaultMethods = [];
+            page.components.forEach((component) => {
+                if (this._yoobicDependencyDefinitions.components[component.selector].defaultMethods) {
+                    this._yoobicDependencyDefinitions.components[component.selector].defaultMethods.forEach((method) => {
+                        _defaultMethods.push(method);
+                    });
+                }
+            });
+
+            this.fs.copyTpl(this.templatePath(platformName + 'Component.ts'),
                 this.destinationPath(pagePath + pageComponent), {
                     data: {
                         pageClassName: this._snakeToClassName(page.pageName),
-                        pageName: page.pageName
+                        pageName: page.pageName,
+                        defaultMethods: _defaultMethods
                     }
                 });
         });
-  
+
     }
 
     _snakeToClassName(string) {

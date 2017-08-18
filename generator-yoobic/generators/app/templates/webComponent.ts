@@ -11,4 +11,7 @@ export class <%= data.pageClassName %>Component extends <%= data.pageClassName %
     constructor() {
         super();
     }
+<% if (data.defaultMethods) { %><% data.defaultMethods.forEach(function (method) { %>
+    <%= method %>() { } <% }); %>
+<% } %>
 }
